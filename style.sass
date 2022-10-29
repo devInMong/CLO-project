@@ -1,0 +1,206 @@
+@import "normalized.scss"
+@import "resets.scss"
+*
+    box-sizing: border-box
+
+.container
+    max-width: 1920px
+
+html
+    font-family: 'Lato', sans-serif
+
+body
+    background: #09161F
+
+/* Шапка */
+
+.header__navbar
+    background-color: #22313f
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 60px
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25)
+    z-index: 100
+    padding-left: 14px
+    &__burger-logo
+        display: flex
+    &__icons
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        color: white
+        &__text
+            display: flex
+            flex-direction: row
+
+    &__icons i
+        font-size: 30px
+    &__icons p
+        width: 102px
+        height: 30px
+        font-size: 100%
+        line-height: 14px
+        text-align: left
+        margin-right: 48px
+    &__icons i:nth-child(1)
+        margin-right: 9px
+i
+    color: white
+.fa-user
+    margin-right: 48px
+.fa-bell
+    margin-right: 33px
+.first-line
+    font-weight: 700
+
+.second-line
+    white-space: nowrap
+
+/* Бургер */
+.burger
+    width: 30px
+    height: 30px
+    margin-right: 19px
+    text-align: center
+    padding-top: 3px
+    &__item
+        display: block
+        width: 100%
+        height: 2px
+        background: #0496FF
+        margin-bottom: 10px
+        transition: 1s all
+        &:last-child
+            margin-bottom: 0
+
+.burger_active
+    span
+        margin-bottom: -2px
+        width: 100%
+        &:nth-child(1)
+            transform: translateY(12px) rotate(-45deg)
+        &:nth-child(2)
+            display: none
+        &:nth-child(3)
+            transform: translateY(12px) rotate(45deg)
+
+/* Боковое навигационное меню */
+.navbar__left
+    position: fixed
+    left: 0
+    top: 60px
+    min-width: 270px
+    height: 100%
+    background: #202B3F
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25)
+    clip-path: polygon(0 0, 50px 0, 50px 100%, 0% 100%)
+
+.navbar__left_active
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
+
+.side__navbar
+    position: fixed
+    min-width: 270px
+    height: 70%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-evenly
+    margin-top: 30px
+    &__item
+        width: 234px
+        height: 50px
+        display: flex
+        align-items: center
+        border-radius: 3px
+        border: none
+        &:focus
+            background: #2D465F
+        &:hover a
+            color: #0496FF
+        &:hover i
+            color: #0496FF
+        &__icon
+            width: 50px
+            max-height: 50px
+        &__text
+            text-align: left
+            width: 184px
+            a
+                color: white
+                text-decoration: none
+                font-family: 'Lato', sans-serif
+                font-size: 18px
+                font-weight: 400
+                line-height: 50%
+
+@media (max-width: 1366px)
+    .container
+        width: 1025px
+
+    .header__navbar
+        height: 50px
+    .navbar__left
+        top: 50px
+        min-width: 207px
+        clip-path: polygon(0 0, 50px 0, 50px 100%, 0% 100%)
+    .navbar__left_active
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
+    .side__navbar
+        min-width: 207px
+        &__item
+            width: 184px
+            height: 50px
+            &__icon
+                width: 42px
+                max-height: 42px
+            &__text
+                text-align: left
+                width: 142px
+                max-height: 42px
+            &__text a
+                text-decoration: none
+                font-family: 'Lato', sans-serif
+                font-size: 15px
+                font-weight: 400
+                line-height: 50%
+
+@media (max-width: 1024px)
+    .container
+        width: 768px
+
+    .header__navbar
+        height: 50px
+    .navbar__left
+        top: 50px
+        min-width: 50%
+        background: #223C50
+        clip-path: polygon(0 0, 50px 0, 50px 100%, 0% 100%)
+    .navbar__left_active
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
+
+@media (max-width: 470px)
+    .container
+        width: 320px
+
+    .header__navbar
+        height: 60px
+        &__icons p
+            display: none
+        &__icons .fa-user
+            display: none
+        &__icons .fa-bell
+            margin-left: 15px
+
+    .navbar__left
+        min-width: 100%
+        clip-path: polygon(0 0, 50px 0, 50px 100%, 0% 100%)
+    .navbar__left_active
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
